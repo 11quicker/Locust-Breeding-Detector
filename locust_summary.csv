@@ -1,0 +1,6 @@
+name,lat,lng,risk,confidence,risk_label
+Somalia coast,11.5,42.5,no,56.0,0
+Yemen highlands,15.3,38.1,no,58.0,0
+Niger Sahel,9.1,45.2,yes,61.9,1
+Ethiopia lowlands,12.8,41.0,no,53.9,0
+Kenya Rift Valley,8.4,44.3,no,61.9,0

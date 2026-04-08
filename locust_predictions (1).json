@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Somalia coast",
+    "lat": 11.5,
+    "lng": 42.5,
+    "risk": "no",
+    "confidence": 56.0
+  },
+  {
+    "name": "Yemen highlands",
+    "lat": 15.3,
+    "lng": 38.1,
+    "risk": "no",
+    "confidence": 58.0
+  },
+  {
+    "name": "Niger Sahel",
+    "lat": 9.1,
+    "lng": 45.2,
+    "risk": "yes",
+    "confidence": 61.9
+  },
+  {
+    "name": "Ethiopia lowlands",
+    "lat": 12.8,
+    "lng": 41.0,
+    "risk": "no",
+    "confidence": 53.9
+  },
+  {
+    "name": "Kenya Rift Valley",
+    "lat": 8.4,
+    "lng": 44.3,
+    "risk": "no",
+    "confidence": 61.9
+  }
+]

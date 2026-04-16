@@ -39,7 +39,8 @@ if Locust_Datasets:
         ).add_to(m)
 
     # Displaying the map in Streamlit
-    streamlit_folium(m, width=700, height=500)
+    from streamlit_folium import st_folium
+    st_folium(m, width=700, height=500)
 
     streamlit.subheader("Risk Distribution")
     risk_counts = dataframes['risk'].value_counts().reset_index()

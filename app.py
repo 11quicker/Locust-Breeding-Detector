@@ -26,6 +26,7 @@ if Locust_Datasets:
 
     streamlit.subheader("Breeding Site Map")
 
+    streamlit.write(dataframes.columns)
     # Calculate central point of map
    if "lat" in dataframes.columns: lat_col = "lat"
     elif "latitude" in dataframes.columns: lat_col = "latitude"

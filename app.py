@@ -18,6 +18,9 @@ Locust_Datasets = streamlit.file_uploader("Upload your dataset", type="json")
 if Locust_Datasets:
     data = json.loads(Locust_Datasets.getvalue().decode("utf-8"))
     dataframes = pandas.DataFrame(data)
+    dataframes["risk"] = dataframes["swarm_size"].apply(
+    lambda x: "yes" if x > 50000 else "no"
+)
     if "risk" in dataframes.columns:
         dataframes["Locust_risk"] = dataframes["risk"].map({"yes": 1, "no": 0})
     else:

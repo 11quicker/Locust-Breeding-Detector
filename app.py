@@ -18,9 +18,12 @@ Locust_Datasets = streamlit.file_uploader("Upload your dataset", type="json")
 if Locust_Datasets:
     data = json.loads(Locust_Datasets.getvalue().decode("utf-8"))
     dataframes = pandas.DataFrame(data)
+    
     dataframes["risk"] = dataframes["swarm_size"].apply(
     lambda x: "yes" if x > 50000 else "no"
 )
+    for index, row in dataframes.iterrows():
+        
     if "risk" in dataframes.columns:
         dataframes["Locust_risk"] = dataframes["risk"].map({"yes": 1, "no": 0})
     else:
@@ -57,10 +60,10 @@ if Locust_Datasets:
 
     # Add markers for each data point
     for idx, row in dataframes.iterrows():
-        popup_html = f"<b>Risk:</b> {row['risk']}<br><b>Location:</b> {row['lat']}, {row['lng']}"
+        popup_html = f"<b>Risk:</b> {row['risk']}<br><b>Location:</b> {row['latitude']}, {row['longtitude']}"
         icon_color = 'red' if row['risk'] == 'yes' else 'green'
         folium.Marker(
-            location=[row['lat'], row['lng']],
+            location=[row['latitude'], row['longtitude']],
             popup=popup_html,
             icon=folium.Icon(color=icon_color, icon='info-sign')
         ).add_to(m)

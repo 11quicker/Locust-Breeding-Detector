@@ -29,8 +29,8 @@ if Locust_Datasets:
     streamlit.write(dataframes.columns)
     # Calculate central point of map
     if Locust_Datasets:
-data = json.load(Locust_Datasets)
-dataframes = pandas.DataFrame(data)
+        data = json.load(Locust_Datasets)
+        dataframes = pandas.DataFrame(data)
 
     if "lat" in dataframes.columns:
         lat_col = "lat"

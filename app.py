@@ -18,7 +18,7 @@ Locust_Datasets = streamlit.file_uploader("Upload your dataset", type="json")
 if Locust_Datasets:
     data = json.load(Locust_Datasets)
     dataframes = pandas.DataFrame(data)
-    File "/mount/src/locust-breeding-detector/app.py"
+    File /mount/src/locust-breeding-detector/app.py
     line 21, in <module>
     dataframes["Locust_risk"] = dataframes["risk"].map({"yes": 1, "no": 0})
 

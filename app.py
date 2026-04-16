@@ -18,7 +18,13 @@ Locust_Datasets = streamlit.file_uploader("Upload your dataset", type="json")
 if Locust_Datasets:
     data = json.load(Locust_Datasets)
     dataframes = pandas.DataFrame(data)
+    File "/mount/src/locust-breeding-detector/app.py", line 21, in <module>
     dataframes["Locust_risk"] = dataframes["risk"].map({"yes": 1, "no": 0})
+                                ~~~~~~~~~~^^^^^^^^
+File "/home/adminuser/venv/lib/python3.14/site-packages/pandas/core/frame.py", line 4378, in __getitem__
+    indexer = self.columns.get_loc(key)
+File "/home/adminuser/venv/lib/python3.14/site-packages/pandas/core/indexes/base.py", line 3648, in get_loc
+    raise KeyError(key) from err
 
     streamlit.subheader("Breeding Site Map")
 

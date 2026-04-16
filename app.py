@@ -28,23 +28,27 @@ if Locust_Datasets:
 
     streamlit.write(dataframes.columns)
     # Calculate central point of map
-  if "lat" in dataframes.columns:
-    lat_col = "lat"
-elif "latitude" in dataframes.columns:
-    lat_col = "latitude"
-else:
-    streamlit.error("No latitude column found")
-    streamlit.stop()
+ if Locust_Datasets:
+    data = json.load(Locust_Datasets)
+    dataframes = pandas.DataFrame(data)
 
-if "lng" in dataframes.columns:
-    lng_col = "lng"
-elif "longitude" in dataframes.columns:
-    lng_col = "longitude"
-else:
-    streamlit.error("No longitude column found")
-    streamlit.stop()
+    if "lat" in dataframes.columns:
+        lat_col = "lat"
+    elif "latitude" in dataframes.columns:
+        lat_col = "latitude"
+    else:
+        streamlit.error("No latitude column found")
+        streamlit.stop()
 
-map_center = [dataframes[lat_col].mean(), dataframes[lng_col].mean()]
+    if "lng" in dataframes.columns:
+        lng_col = "lng"
+    elif "longitude" in dataframes.columns:
+        lng_col = "longitude"
+    else:
+        streamlit.error("No longitude column found")
+        streamlit.stop()
+
+    map_center = [dataframes[lat_col].mean(), dataframes[lng_col].mean()]
     # Create a map using Folium which centers at the average coordinates for ease of access
     m = folium.Map(location=map_center, zoom_start=6)
 

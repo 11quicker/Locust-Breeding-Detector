@@ -27,19 +27,17 @@ if Locust_Datasets:
     streamlit.subheader("Breeding Site Map")
 
     # Calculate central point of map
-   if "lat" in dataframes.columns:
-    lat_col = "lat"
-elif "latitude" in dataframes.columns:
-    lat_col = "latitude"
-else:
+   if "lat" in dataframes.columns: lat_col = "lat"
+    elif "latitude" in dataframes.columns: lat_col = "latitude"
+    else:
     streamlit.error("No latitude column found")
     streamlit.stop()
 
-if "lng" in dataframes.columns:
+    if "lng" in dataframes.columns:
     lng_col = "lng"
-elif "longitude" in dataframes.columns:
+    elif "longitude" in dataframes.columns:
     lng_col = "longitude"
-else:
+    else:
     streamlit.error("No longitude column found")
     streamlit.stop()
 

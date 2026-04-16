@@ -24,7 +24,7 @@ if Locust_Datasets:
 )
     for index, row in dataframes.iterrows():
         
-    if "risk" in dataframes.columns:
+        if "risk" in dataframes.columns:
         dataframes["Locust_risk"] = dataframes["risk"].map({"yes": 1, "no": 0})
     else:
         streamlit.error("No 'risk' column found in dataset")

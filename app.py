@@ -6,7 +6,7 @@ import json
 # Folium = map
 
 import folium
-from streamlit_folium import streamlit_folium
+import streamlit_folium
 
 streamlit.set_page_config(page_title="Locust Breeding Site Detector", page_icon="🦗", layout="wide")
 

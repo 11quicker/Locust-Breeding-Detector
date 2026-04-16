@@ -16,7 +16,7 @@ streamlit.write("Upload your dataset to visualize potential breeding sites on a 
 Locust_Datasets = streamlit.file_uploader("Upload your dataset", type="json")
 
 if Locust_Datasets:
-    data = json.load(Locust_Datasets)
+    data = json.loads(Locust_Datasets.getvalue().decode("utf-8"))
     dataframes = pandas.DataFrame(data)
     if "risk" in dataframes.columns:
         dataframes["Locust_risk"] = dataframes["risk"].map({"yes": 1, "no": 0})

@@ -29,6 +29,7 @@ if Locust_Datasets:
     m = folium.Map(location=map_center, zoom_start=6)
 
     # Add markers for each data pointfor _, row in df.iterrows():
+for _, row in dataframes.iterrows():
     risk = row["risk"].lower()
 
     if risk == "high":

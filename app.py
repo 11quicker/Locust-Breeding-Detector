@@ -48,8 +48,8 @@ if Locust_Datasets:
     )
     add_to(m)
     popup_html = f"<b>Risk:</b> {row['risk']}<br><b>Location:</b> {row['lat']}, {row['lng']}"
-        icon_color = 'red' if row['risk'] == 'yes' else 'green'
-        folium.Marker(
+    icon_color = 'red' if row['risk'] == 'yes' else 'green'
+    folium.Marker(
             location=[row['lat'], row['lng']],
             popup=popup_html,
             icon=folium.Icon(color=icon_color, icon='info-sign')

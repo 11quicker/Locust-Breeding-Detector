@@ -28,8 +28,24 @@ if Locust_Datasets:
     # Create a map using Folium which centers at the average coordinates for ease of access
     m = folium.Map(location=map_center, zoom_start=6)
 
-    # Add markers for each data point
-    for idx, row in dataframes.iterrows():
+    # Add markers for each data pointfor _, row in df.iterrows():
+    risk = row["risk"].lower()
+
+    if risk == "high":
+        color = "red"
+    elif risk == "medium":
+        color = "orange"
+    else:
+        color = "green"
+
+    folium.CircleMarker(
+        location=[row["lat"], row["lng"]],
+        radius=6,
+        color=color,
+        fill=True,
+        fill_color=color,
+        popup=f"Risk: {risk}"
+    ).add_to(m)
         popup_html = f"<b>Risk:</b> {row['risk']}<br><b>Location:</b> {row['lat']}, {row['lng']}"
         icon_color = 'red' if row['risk'] == 'yes' else 'green'
         folium.Marker(

@@ -8,7 +8,7 @@ from streamlit_folium import st_folium
 
 streamlit.set_page_config(page_title="Locust Breeding Site Detector", page_icon="🦗", layout="wide")
 
-streamlit.title("🦗 Locust Breeding Site Detector")
+streamlit.title("🦗 Locust Watch: A Locust Breeding Site Detector")
 streamlit.write("Upload your dataset to visualize potential breeding sites on a map.")
 
 Locust_Datasets = streamlit.file_uploader("Upload your dataset", type="json")
